@@ -38,3 +38,11 @@ button {
 .blue {
     background-color: dodgerblue;
 }
+
+.red {
+    background-color: red;
+}
+
+.event-none {
+    pointer-events: none;
+}
