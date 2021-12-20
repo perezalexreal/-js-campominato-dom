@@ -7,6 +7,17 @@ let numBoxs = 0;
 let arrayNR = [];
 let arrayBox = [];
 
+function resetAll(){
+    numPointsUser = 0;
+    numBoxs = 0;
+    arrayNR = [];
+    container.style.pointerEvents = 'all';
+    arrayBox = [];
+    container.innerHTML = "";
+}
+
+
+
 function RandomNumber(min, max) {
     const result = Math.floor(Math.random() * ((max + 1) - min)) + min;
     return result;
@@ -77,12 +88,7 @@ function creaBox(containerGame, difficultGame, number) {
 
 
 buttonEasy.addEventListener('click', function () {
-     numPointsUser = 0;
-     numBoxs = 0;
-     arrayNR = [];
-     arrayBox = [];
-     container.style.pointerEvents = 'all';
-    container.innerHTML = "";
+    resetAll();
     let bombsBoom = generateBombs(100);
     for (let i = 1; i <= 100; i++) {
         creaBox(container, 'easy', i);
@@ -90,12 +96,7 @@ buttonEasy.addEventListener('click', function () {
 })
 
 buttonMedium.addEventListener('click', function () {
-    numPointsUser = 0;
-    numBoxs = 0;
-    arrayNR = [];
-    container.style.pointerEvents = 'all';
-    arrayBox = [];
-    container.innerHTML = "";
+    resetAll();
     let bombsBoom = generateBombs(81);
     for (let i = 1; i <= 81; i++) {
         creaBox(container, 'medium', i);
@@ -104,12 +105,7 @@ buttonMedium.addEventListener('click', function () {
 })
 
 buttonHard.addEventListener('click', function () {
-    numPointsUser = 0;
-    numBoxs = 0;
-    arrayNR = [];
-    arrayBox = [];
-    container.style.pointerEvents = 'all';
-    container.innerHTML = "";
+    resetAll();
     let bombsBoom = generateBombs(49);
     for (let i = 1; i <= 49; i++) {
         creaBox(container, 'hard', i);
